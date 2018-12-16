@@ -1,0 +1,81 @@
+@font-face {
+	font-family: 'Ubuntu';
+	src: url(../font/Ubuntu-R.ttf);
+}
+@font-face {
+    font-family: 'Ubuntu-L';
+    src: url(../font/Ubuntu-L.ttf);
+}
+html, body{
+    font-family: 'Ubuntu';
+    padding: 0;
+    margin: 0;
+	font-size: 70%;
+	height: 100%;
+	height: auto;
+}
+header, .table-header, .blur,.se-pre-con, .toast, .bg-darken{
+	display: none
+}
+#print-order-txt{
+	display: block !important;
+	border: 1px solid #aaa;
+	color: #999;
+	border-radius: 3px;
+	padding: 5px 10px;
+	margin-bottom:  10px;
+}
+#print-header-txt{
+	display: block !important;
+	font-family: 'Ubuntu-L';
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: left;
+	color: #222;
+	text-align: center;
+	margin-bottom: 10px;
+}
+#print-header-txt-sm{
+	font-size: 0.7rem;
+	font-weight: normal;
+	padding-left: 25px;
+	padding-bottom: -20px;
+}
+/* Table */
+.table{
+	width: 100%;
+	background-color: #ffffff;
+	border-collapse: collapse;
+}
+.table thead th{
+	/* -webkit-print-color-adjust: exact; */
+	font-size: 0.8rem;
+	font-family: 'Ubuntu-L';
+	background-color: #bcbcbc;
+	color: #000000;
+	border: 0.5px solid #222;
+	white-space: nowrap;
+	text-align: center;
+	padding: 4px 6px;
+}
+.table tbody tr:not(:nth-child(4n+1)) td{
+	/* -webkit-print-color-adjust: exact; */
+	background-color: #efefef;
+}
+.table tbody tr td{
+	font-size:0.8rem;
+}
+.table tbody tr td:nth-child(1){
+	font-size: 0.7rem;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.table tbody td{
+	border: 0.5px solid #222;
+	padding: 2.5px;
+	text-align: center;
+}/* 
+.table tbody td:nth-child(odd){
+	-webkit-print-color-adjust: exact;
+	background-color: #FAFAFA;
+} */

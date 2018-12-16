@@ -1,0 +1,663 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(../font/Ubuntu-R.ttf);
+}
+@font-face {
+    font-family: Ubuntu-L;
+    src: url(../font/Ubuntu-L.ttf);
+}
+@font-face {
+    font-family: Ubuntu-B;
+    src: url(../font/Ubuntu-B.ttf);
+}
+@font-face {
+    font-family: Ubuntu-C;
+    src: url(../font/Ubuntu-C.ttf);
+}
+html, body{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: 'Ubuntu', Fallback, sans-serif;
+	font-size: 90%;
+	height: 100%;
+	min-height: auto;
+}
+.default, body{
+	background: url(../img/background-0.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.morning{
+	background: url(../img/background-1.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.noon{
+	background: url(../img/background-2.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.afternoon{
+	background: url(../img/background-3.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.evening{
+	background: url(../img/background-4.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.night{
+	background: url(../img/background-5.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.wal-alt-1{
+	background: url(../img/background-alt-1.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.wal-alt-2{
+	background: url(../img/background-alt-2.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.wal-alt-3{
+	background: url(../img/background-alt-3.jpg), #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../img/landing-loading.gif) center no-repeat #fff;
+}
+.bg-darken{
+ 	background-color: rgba(0, 0, 0, 0.4);
+ 	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+ 	height:100%;
+ 	width: 100%;
+ }
+.hide{
+	display: none;
+}
+.require{
+	color: #EF5350;
+}
+.form-control{
+	width: auto;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 2px;
+	border-width: 0;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); 
+}
+.form-control:focus{
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6); 
+	/*box-shadow: inset 0 1px 5px -1px rgba(0, 0, 0, 0.5); */
+}
+.form-code{
+	font-size: 2.5em;
+	letter-spacing: 2rem;
+	width: 100%;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.6);
+	padding: 5px 0;
+	border-radius: 4px;
+	border: 2px solid #ddd;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    /* position: absolute; */
+    display: none;
+}
+.flatCheckbox {
+	display: inline-block;
+	margin: 10px 0;
+	margin-right: 15px;
+    width: 85px;
+    height: 26px;
+}
+.flatCheckbox div
+{
+    width: 100%;
+    height:100%;
+    background: #fff;
+    position: relative;
+    top:-30px;
+    border-radius: 2px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+}
+.flatCheckbox label
+{
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+.flatCheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.flatCheckbox label:before{
+	content: '';
+    padding: 10px 15px;
+}
+.flatCheckbox input[type=checkbox]:checked ~ div{
+    background: #d3ffcc;
+}
+
+.flatCheckbox input[type=checkbox]:checked ~ label {
+    left: 50px;
+}
+.ref-btn-txt{
+	font-size:0.7rem;
+	padding: 0 5px;
+}
+.ref-icon{
+	position: absolute;
+	right: 2rem;
+	top: 2.5rem;
+}
+.ref-icon i{
+	font-size: 1.5rem;
+	margin: 0 5px;
+	color: #888;
+}
+.ref-icon i:hover{
+	color: #444;
+	transition: all 0.5s ease;
+}
+.form-sort{
+	font-size: 0.8rem;
+	width: auto;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	border-width: 0;
+	padding: 10px 12px !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.4); 
+}
+.form-sort:hover{
+	box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2); 
+}
+.modal-glass{
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.modal-glass .form-control{
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.modal-glass .form-control option{
+	background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.btn-sm{
+	font-size: 1rem;
+	padding: 5px 10px !important;
+	color: #FFFFFF;
+	background-color: rgba(0, 0, 0, 0.9);
+	cursor: pointer;
+}
+/* Button */
+.btn-dark{
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.btn-blue{
+	background-color: rgba(13, 71, 161, 0.8);
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.btn-glass{
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-width: 0;
+	border-radius: 5px;
+	box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.5);
+	color: #000;
+	cursor: pointer;
+}
+.btn-glass:hover{
+	box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+	color: #000;
+}
+.btn-glass:active, .btn-glass:focus{
+	box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.2);
+}
+.btn-signout{
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-width: 0;
+	border-radius: 5px;
+	box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.5);
+	color: rgba(255, 255, 255, 0.9);
+	cursor: pointer;
+}
+.btn-signout:hover{
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+	color: rgba(255, 255, 255, 0.8);
+}
+.btn-signout:active, .btn-signout:focus{
+	box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.2);
+}
+.btn-black{
+	background-color: rgba(0, 0, 0, 0.9);
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.btn-black:hover{
+	color: #FFFFFF;
+}
+.btn-grey{
+	color: #DDDDDD !important;
+	background-color: rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+}
+.btn-transparent{
+	background: none !important;
+	border-width: 0 !important;
+	cursor: pointer;
+}
+.btn-icon i{
+	color: #222222;
+	font-size: 1.6rem;
+	text-align: center;
+	vertical-align: bottom;
+	padding: 0;
+	margin: 0;
+	font-size: 1.8rem;
+	cursor: pointer;
+}
+.btn-icon i:hover, .btn-icon i:active, .btn-icon i:focus{
+}
+button.btn-icon{
+	background-color: initial;
+	color: #000;
+	padding: 2px 4px;
+	margin: 0;
+	cursor: pointer;
+}
+.icon-more{
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+/* Table */
+div.table-container{
+	margin: 20px 0;
+	border-radius: 8px !important;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4) !important;
+}
+.td-editable{
+	cursor: cell;
+}
+.table-header{
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 8px 8px 0 0;
+}
+.table-footer{
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 8px !important;
+	border-radius: 0 0 8px 8px;
+	caption-side: bottom;
+	box-sizing: content-box;
+}
+.table{
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 0 !important;
+	overflow: none; 
+}
+.table th{
+	border-width: 0 !important;
+	white-space: nowrap;
+	text-align: center;
+}
+.table td{
+	border:1px solid rgba(224, 224, 224, 0.5) !important;
+	border-left-width: 0 !important;
+	border-right-width: 0 !important;
+	text-align: center;
+}
+#table-order > tbody tr:active td{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.table thead{
+	box-shadow: 0 2px 10px -4px rgba(0, 0, 0, 0.6) !important;
+}
+.table thead th{
+	background-color: rgba(255, 255, 255, 1);
+}
+.checked{
+	color: #1b5e20;
+	background-color: rgba(76, 175, 80, 0.3) !important;
+}
+
+/* Item Table */
+.table-items{
+	border-bottom: 20px solid rgba(255, 255, 255, 0.8);
+	position: relative;
+}
+.table-items .form-control{
+	width: 100% !important;
+}
+.table-items > .table tr td:hover{
+	background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+}
+.table-items > .table tr td:first-child{
+	background-color: rgba(0, 0, 0, 0.05);
+}
+.table-items > .table tr td:first-child:hover{
+	background: rgba(0, 0, 0, 0.1);
+}
+.sticky-thead th{
+	position: -webkit-sticky;
+	position: sticky;
+	top: 50px;
+}
+/* Table */
+
+/* Frosted Blur start */
+.blur{
+	background: inherit;
+	position: absolute;
+	overflow: hidden;
+	border-radius: 8px;
+}
+@-moz-document url-prefix() { 
+	.blur{
+		background: rgba(255,255,255,0.4);
+	}
+}
+.blur:before{
+	content: "";
+	background: inherit;
+	position: absolute;
+	box-shadow: inset 0 0 0 9999px rgba(255,255,255,0.4);
+	filter: blur(10px);
+}
+.close{
+	font-size: 2.2rem;
+}
+/* Frosted Blur end */
+
+/*  Right click start */
+#rmenu{
+	position: absolute;
+	border-radius: 3px;
+	padding: 10px 0px;
+	background-color: rgba(0, 0, 0, 0.9);
+	box-shadow: 0 5px 10px -2px #000;
+	opacity: 0.85;
+	box-sizing: border-box;
+}
+#rmenu div{
+	position: relative;
+	font-size: 1.4 rem;
+	width: 100%;
+	padding: 6px 10px;
+	padding-right: 5rem;
+	text-decoration: none;
+	color: #FFFFFF;
+	letter-spacing: .2px;
+	text-decoration: none;
+}
+#rmenu div:hover{
+	background-color: rgba(255, 255, 255, 0.1);
+	/*color: #AAAAAA;*/
+	text-decoration: none !important;
+}
+#rmenu:after{
+	content: '';
+	position: absolute;
+	top: 14px;
+	right: -10px;
+	border-left: 5px solid rgba(0, 0, 0, 0.9);
+	border-top: 5px solid  transparent;
+	border-bottom: 5px solid  transparent;
+	border-right: 5px solid  transparent;
+}
+/*  Right click end */
+
+
+
+.printFrame body{
+  /*position: absolute;*/
+  /*left: -9999px;*/
+width: 100%;
+}
+.printFrame{
+	border: 1px solid black;
+  background: red;
+}
+
+
+.error-msg{
+	float: left;
+	font-size: 0.8rem;
+	color: #EF5350;
+	padding-bottom: 5px;
+	margin-left: 5px;
+}
+.txt-success{
+	color: #43A047;
+}
+.txt-error{
+	color: #EF5350;
+}
+/* signin */
+.signin-container{
+	display: flex;
+	height: 100%;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.signin-form{
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 3px;
+	width: 100%;
+	max-width: 300px;
+	padding: 30px 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.signin-form .btn-signin{
+	float: right;
+	border-radius: 3px;
+	padding: 5px 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+}
+.signin-form .btn-signin:hover, .signin-form .btn-signin:focus{
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.signin-form .btn-signin:active{
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.signin-form .form-control{
+	width: 100%;
+}
+header{
+	position: fixed;
+  	top: 0;
+	font-size: 1.1rem;
+	width: 100%;
+	color: #FFFFFF;
+	background-color: rgba(10, 10, 10, 0.8);
+	padding: 10px 20px;
+	z-index: 1;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+header #logo{
+	color: #FFFFFF;
+	font-size: 1.3rem;
+}
+.toast{
+    font-family: Ubuntu-C;
+	background-color: rgba(255, 255, 255, 0.7);
+	font-size: 1rem;
+	padding: 15px 50px; 
+	position: fixed;
+	left: 50%;
+	bottom: 10%;
+	margin-left: -100px; 
+	display: none;
+	z-index: 9999;
+	border-radius: 30px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+.editable-container{
+	width: auto;
+	max-width: 100px;
+}
+.editable-input input{
+	/* top: 50%; */
+	bottom: 20px;
+	width: auto;
+	height: 40px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 2px;
+	border-width: 0px;
+	/*padding: 3px 10px;*/
+	text-align: center;
+	/*box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);*/
+	/*box-sizing: content-box;*/
+}
+.editable-buttons{
+	display: none;
+}
+.editable-buttons button{
+	display: none;
+	background-color: rgba(13, 71, 161, 1);
+	padding: 3px 5px;
+	width: 50px;
+	border-width: 0;
+	color: #FFFFFF;
+}
+#search{
+	width: auto !important; 
+	background-image: url('../img/search.png');
+	background-size: 15px;
+	background-position: 10px 50%;
+	background-repeat: no-repeat;
+	padding-left: 30px !important;
+	border-radius: 99rem;
+}
+#clock{
+	
+}
+#order-txt{
+	font-family: 'Ubuntu-L';
+	font-size: 1.5rem;
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 2rem;
+	margin-left: 1.5rem;
+	vertical-align: middle;
+}
+.for-lg{
+	padding: 8px 12px;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.for-lg:hover{
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+@media only screen{
+	.utility{
+		position: fixed;
+	}
+	.utility #clock{
+		font-family: Ubuntu-L;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 7rem;
+		margin: 0;
+		margin-top: 10px;
+		text-align: center;
+	}
+}
+@media only screen and (max-width : 1000px) {
+	.utility #clock, .utility .for-lg, .utility #net-status{
+		display: none;
+	}
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+.footer-txt {
+	font-family: 'Ubuntu-C';
+	font-size: 0.8rem;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	z-index: 99999;
+	color: rgba(255, 255, 255, 0.2)
+}
+#ref-form{
+	/* width: 100%; */
+	text-align: left;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 20px 50px;
+}
+#ref-form label{
+	font-size: 0.8rem;
+	vertical-align: middle;
+	padding-right: 20px;
+}
+#ref-form input{
+	padding: 10px 15px;
+}
+#ref-form input[type="submit"]{
+	width: 100%;
+	padding: 10px 15px;
+	margin-top: 20px;
+}
+#ref-form .btn-signin{
+	/* max-width: 200px; */
+	border-radius: 3px;
+	padding: 5px 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+}
