@@ -3,7 +3,7 @@ class db{
 	public $db;
 
 	function __construct(){
-		$this->db_connect('localhost','adminbot','letmeinplz','sysdb');
+		$this->db_connect('localhost','root','','trimsbot_db');
 	}
 
 	function db_connect($host,$user,$pass,$database){

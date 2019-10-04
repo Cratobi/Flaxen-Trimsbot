@@ -4,7 +4,7 @@ if(isset($_POST["cmd"])){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "sysDB";
+	$dbname = "trimsbot_db";
 
 	if($cmd == 1){
 		echo "- Forging<br>";
@@ -92,11 +92,11 @@ if(isset($_POST["cmd"])){
 		";
 		$sql .= "
 			INSERT INTO accounts (name, username, password, privillege)
-				VALUES('Local User', 'local', 'password', 1);
+				VALUES('Local User', 'local', '12345', 1);
 			";
 			$sql .= "
 			INSERT INTO accounts (name, username, password, privillege)
-				VALUES('Admin', 'admin', 'letmeinplz', 2);
+				VALUES('Admin', 'admin', 'admin', 2);
 			";
 		$sql .= "
 			INSERT INTO accounts (name, username, password, privillege)
@@ -121,64 +121,6 @@ if(isset($_POST["cmd"])){
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
 		if (!$conn) {
 			die("Connection failed: " . $conn->error());
-		}
-		$sql = "
-			CREATE USER 'adminbot'@'localhost' IDENTIFIED BY 'letmeinplz';
-		";
-		$sql .= "
-			GRANT ALL PRIVILEGES ON *.* TO 'adminbot'@'localhost';
-		";
-		$sql .= "
-			REVOKE ALL PRIVILEGES ON *.* FROM 'adminbot'@'localhost';
-		";
-		$sql .= "
-			GRANT ALL PRIVILEGES ON *.* TO 'adminbot'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-		";
-		$sql .= "
-			REVOKE ALL PRIVILEGES ON *.* FROM 'root'@'::1';
-		";
-		$sql .= "
-			REVOKE GRANT OPTION ON *.* FROM 'root'@'::1';
-		";
-		$sql .= "
-			GRANT USAGE ON *.* TO 'root'@'::1' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-		";
-		$sql .= "
-			REVOKE ALL PRIVILEGES ON *.* FROM 'root'@'::1';
-		";
-		$sql .= "
-			REVOKE GRANT OPTION ON *.* FROM 'root'@'::1';
-		";
-		$sql .= "
-			GRANT USAGE ON *.* TO 'root'@'::1' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-		";
-		$sql .= "
-			REVOKE ALL PRIVILEGES ON *.* FROM 'root'@'127.0.0.1';
-		";
-		$sql .= "
-			REVOKE GRANT OPTION ON *.* FROM 'root'@'127.0.0.1';
-		";
-		$sql .= "
-			GRANT USAGE ON *.* TO 'root'@'127.0.0.1' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-		";
-		$sql .= "
-			REVOKE ALL PRIVILEGES ON *.* FROM 'root'@'localhost';
-		";
-		$sql .= "
-			REVOKE GRANT OPTION ON *.* FROM 'root'@'localhost';
-		";
-		$sql .= "
-			GRANT USAGE ON *.* TO 'root'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-		";
-
-		if ($conn->multi_query($sql) === TRUE) {
-			$servername = "localhost";
-			$username = "adminbot";
-			$password = "letmeinplz";
-			$dbname = "sysDB";
-			echo "- Pushing Complete!<br><br>";
-		} else {
-			echo "- Failed to push data. Something went terribly wrong <b>:(</b> &thinsp; <i>" . $conn->error() . "</i><br><br>";
 		}
 	}
 	elseif ($_POST["cmd"] == 3) {
